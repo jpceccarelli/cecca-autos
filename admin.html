@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin - AutoMarket</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <header>
+        <h1>Panel de Administración</h1>
+        <p class="muted">
+          Agregar / Editar / Eliminar vehículos. Los cambios se guardan en
+          <strong>localStorage</strong>.
+        </p>
+      </header>
+
+      <main class="grid">
+        <section class="form-section">
+          <h2 id="form-title">Nuevo vehículo</h2>
+          <form id="veh-form">
+            <input type="hidden" id="veh-id" />
+            <label
+              >Tipo
+              <select id="tipo">
+                <option value="auto">Auto</option>
+                <option value="moto">Moto</option>
+              </select>
+            </label>
+            <label>Marca <input id="marca" required /></label>
+            <label>Modelo <input id="modelo" required /></label>
+            <label
+              >Precio (USD) <input id="precio" type="number" required
+            /></label>
+            <label
+              >Descripción <textarea id="descripcion" rows="3"></textarea>
+            </label>
+            <label
+              >WhatsApp (sin +) <input id="whatsapp" placeholder="54911..."
+            /></label>
+            <label
+              >Imagen principal (URL o upload)
+              <input id="img-url" placeholder="https://..." />
+              <input id="img-file" type="file" accept="image/*" />
+            </label>
+            <label
+              >Otras imágenes (URLs separadas por coma)
+              <input id="imagenes" placeholder="https://...,https://..." />
+            </label>
+
+            <div class="actions">
+              <button type="submit" class="btn-primary">
+                Guardar vehículo
+              </button>
+              <button type="button" id="reset-form" class="btn-secondary">
+                Nuevo
+              </button>
+            </div>
+          </form>
+
+          <div class="tools">
+            <button id="export-json" class="btn-secondary">
+              Exportar JSON
+            </button>
+            <input id="import-file" type="file" accept="application/json" />
+          </div>
+        </section>
+
+        <section class="list-section">
+          <h2>Vehículos cargados</h2>
+          <div id="lista"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

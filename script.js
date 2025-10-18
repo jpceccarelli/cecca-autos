@@ -118,7 +118,7 @@ function createCard(veh) {
   // 4. Botón de WhatsApp
   const btnWhatsapp = document.createElement("a");
   btnWhatsapp.className = "btn-whatsapp btn-whatsapp-card"; // Usamos la clase existente y añadimos una específica
-  btnWhatsapp.textContent = "Consultar";
+  btnWhatsapp.textContent = "Whatsapp";
   btnWhatsapp.href = buildWhatsappLink(
     veh.whatsapp || "5492616256518",
     `Hola! Estoy interesado en el ${veh.marca} ${veh.modelo} . ¿Me das más info?`
@@ -459,4 +459,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // =========================================================
   }
+
 });

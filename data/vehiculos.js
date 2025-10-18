@@ -21,6 +21,7 @@ const vehiculos = [
       Color: "Bordeaux",
       Kms: "80.000",
       Combustible: "Nafta",
+      Permuta: "Si"
     },
     vin: "VINSANDERO0002",
     whatsapp: "5492616256518",
@@ -46,6 +47,7 @@ const vehiculos = [
       Color: "Negro",
       Kms: "108.000",
       Combustible: "Nafta",
+      Permuta: "Si"
     },
     vin: "VINSANDERO0002",
     whatsapp: "5492616256518",
@@ -71,6 +73,7 @@ const vehiculos = [
       Color: "Negro",
       kms: "240,000",
       Combustible: "Nafta-GNC",
+      Permuta: "Si"
     },
     vin: "VINDUSTER0003",
     whatsapp: "5492616256518",
@@ -96,9 +99,10 @@ const vehiculos = [
       Color: "Gris",
       kms: "157.000",
       Combustible: "Diesel",
+      Permuta: "Si"
     },
     vin: "VINAMAROK0004",
-    whatsapp: "5492616256518",
+    whatsapp: "5492616965475",
   },
   {
     id: "5",
@@ -120,8 +124,10 @@ const vehiculos = [
       Cilindrada: "250 cc",
       Color: "Blanca",
       kms: "0",
+      Permuta: "Si"
     },
     vin: "VINXR2500005",
     whatsapp: "5492616256518",
   },
 ];
+

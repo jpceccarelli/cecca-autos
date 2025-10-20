@@ -71,7 +71,7 @@ const vehiculos = [
       Motor: "2.0 L",
       Transmisión: "Caja 6ta - Manual",
       Color: "Negro",
-      kms: "240,000",
+      kms: "210.000",
       Combustible: "Nafta-GNC",
       Permuta: "Si"
     },
@@ -130,5 +130,6 @@ const vehiculos = [
     whatsapp: "5492616256518",
   },
 ];
+
 
 

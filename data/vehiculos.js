@@ -4,7 +4,7 @@ const vehiculos = [
     id: "1",
     tipo: "auto",
     marca: "Peugeot",
-    modelo: "208 Allure 115cv",
+    modelo: "208 Allure 115cv- 2019",
     precio: 17300000,
 
     imagenPrincipal: "assets/autos/2081.jpeg",
@@ -30,7 +30,7 @@ const vehiculos = [
     id: "2",
     tipo: "auto",
     marca: "Renault",
-    modelo: "Sandero Pack 8v",
+    modelo: "Sandero Pack 8v - 2009",
     precio: 9000000,
     imagenPrincipal: "assets/autos/sandero1.jpeg",
 
@@ -56,7 +56,7 @@ const vehiculos = [
     id: "3",
     tipo: "auto",
     marca: "Renault",
-    modelo: "Duster Privilege 2.0",
+    modelo: "Duster Privilege 2.0 - 2011",
     precio: 12500000,
     imagenPrincipal: "assets/autos/duster1.jpeg",
     imagenes: [
@@ -82,7 +82,7 @@ const vehiculos = [
     id: "4",
     tipo: "pick-up",
     marca: "Volkswagen",
-    modelo: "Amarok 2.0 Highline 163cv",
+    modelo: "Amarok 2.0 Highline 163cv - 2011",
     precio: 23500000,
     imagenPrincipal: "assets/autos/amarok1.jpeg",
     imagenes: [
@@ -108,7 +108,7 @@ const vehiculos = [
     id: "5",
     tipo: "moto",
     marca: "Honda",
-    modelo: "XR 250R",
+    modelo: "XR 250R - 1994",
 
     precio: 5700000,
 
@@ -130,4 +130,5 @@ const vehiculos = [
     whatsapp: "5492616256518",
   },
 ];
+
 

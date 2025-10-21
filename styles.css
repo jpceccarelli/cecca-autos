@@ -1,6 +1,5 @@
 /*styles.css*/
 
-
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gruppo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
@@ -31,7 +30,6 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  /* Fuente para párrafos */
   font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
   scroll-behavior: smooth;
@@ -43,12 +41,10 @@ a {
   text-decoration: none;
 }
 
-/* Evita solapamiento con navbar fija */
 body {
   padding-top: var(--nav-height);
 }
 
-/* Utilidades accesibles */
 .sr-only {
   position: absolute !important;
   height: 1px;
@@ -90,7 +86,7 @@ body {
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.6px;
-  text-decoration: none; /* Añadido para el link <a> */
+  text-decoration: none;
 }
 .nav-links {
   display: flex;
@@ -134,15 +130,13 @@ body {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* HERO con imagen de fondo y fade-in */
+/* HERO */
 .hero {
   position: relative;
-  min-height: calc(
-    100vh - var(--nav-height)
-  ); /* Fallback para navegadores viejos */
-  min-height: calc(100svh - var(--nav-height)); /* Moderno y preciso */
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100svh - var(--nav-height));
   display: flex;
-  align-items: flex-end; /* PC: Alinear al fondo */
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   padding: 0;
@@ -150,38 +144,28 @@ body {
   overflow: hidden;
   background-color: #000;
 }
-
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("assets/fondo-hero1.jpg"); /* Tu imagen de fondo */
+  background-image: url("assets/fondo-hero1.jpg");
   background-size: cover;
   background-position: center;
   z-index: 0;
-
-  /* Animación de fondo */
   opacity: 0;
   filter: brightness(0.2);
   animation: fadeInBackground 1.2s ease-out 0.1s forwards;
 }
-
 .hero-inner {
   position: relative;
-  z-index: 10; /* Sobre el gradiente */
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
   color: #999696;
   text-align: center;
-
-  /* Posición del texto: más abajo en PC */
-  padding: 1rem 1rem 6rem; /* 6rem de espacio desde el fondo */
-
-  /* Animación del texto */
+  padding: 1rem 1rem 6rem;
   opacity: 0;
   animation: fadeIn 1.2s ease-out 0.1s forwards;
 }
-
-/* Keyframes para el fondo */
 @keyframes fadeInBackground {
   from {
     opacity: 0;
@@ -190,16 +174,14 @@ body {
   to {
     opacity: 1;
     filter: brightness(1.5);
-  } /* Tus valores de brillo/opacidad */
+  }
 }
-
 @keyframes fadeInUp {
   to {
     opacity: 1;
     transform: none;
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -209,7 +191,7 @@ body {
   }
 }
 
-/* HERO button style */
+/* BOTONES */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -224,12 +206,21 @@ body {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   color: #000;
 }
+/* CÓDIGO ACTUALIZADO */
 .btn-ghost {
   background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text); /* <-- Se mantiene el color de texto blanco */
+  border: 1px solid var(--accent); /* <-- MODIFICADO: Borde dorado para más visibilidad */
   padding: 0.6rem 0.9rem;
   border-radius: 8px;
+  transition: all 0.2s ease-out; /* <-- AÑADIDO: Para una transición suave */
+}
+
+/* AÑADIDO: Efecto hover/focus para que se rellene (el que te gustó) */
+.btn-ghost:hover {
+  background: var(--accent);
+  color: #000; /* Color de texto oscuro al rellenarse */
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
 }
 .btn-whatsapp {
   background: var(--accent);
@@ -238,6 +229,19 @@ body {
   border-radius: 999px;
   font-weight: 700;
   display: inline-block;
+  /* Efecto hover WhatsApp */
+  transition: all 0.2s ease-out;
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.25);
+}
+
+.btn-info-modal {
+  margin-top: 1.5rem;
 }
 
 /* SECCIONES */
@@ -251,38 +255,32 @@ body {
   text-align: center;
 }
 
-/* ========================================================= */
-/* FUENTE RALEWAY PARA TÍTULOS */
-/* ========================================================= */
+/* TÍTULOS */
 h1,
 h2,
 h3 {
   font-family: "Raleway", sans-serif;
-  font-weight: 600; /* Seminegrita */
+  font-weight: 600;
   letter-spacing: 1px;
 }
-
 h2 {
   color: var(--accent);
   margin-bottom: 0.5rem;
   font-size: 2.2rem;
   text-transform: uppercase;
 }
-
-/* Estilos para el H1 dentro del Hero */
 .hero-inner h1 {
   font-family: "Gruppo";
   margin: 36rem 0 0.5rem 0;
-  font-size: 1.3rem; /* Tamaño para PC */
+  font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 1px;
 }
 
-/* VEHÍCULOS GRID */
+/* VEHÍCULOS GRID & CARD */
 .vehiculos-container {
-  display: grid !important; /* Mantenemos !important si era necesario antes */
+  display: grid !important;
   gap: var(--gap);
-  /* Por defecto (móvil y tablet), dejamos que se ajuste automáticamente */
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin-top: 1rem;
   visibility: visible !important;
@@ -302,9 +300,9 @@ h2 {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 .card picture,
-img {
+.card img {
   display: block;
-}
+} /* Aseguramos display block */
 .card-img {
   width: 100%;
   height: 240px;
@@ -314,7 +312,6 @@ img {
 }
 .card-content {
   padding: 1rem;
-  /*display: flex;*/
   flex-direction: column;
   gap: 0.8rem;
   flex: 1;
@@ -322,7 +319,7 @@ img {
 }
 .card h3 {
   margin: 0;
-  font-size: 1.25rem; /* Ajuste de tamaño */
+  font-size: 1.25rem;
   font-weight: 600;
 }
 .card .small {
@@ -338,17 +335,13 @@ img {
   color: var(--accent);
   font-size: 1.05rem;
 }
-
-/* Estilo específico para el botón de WhatsApp DENTRO de la card */
 .btn-whatsapp-card {
-  margin-top: 1.5rem; /* Espacio arriba */
-  padding: 0.5rem 0.8rem; /* Un poco más pequeño que los otros botones */
+  margin-top: 1.5rem;
+  padding: 0.5rem 0.8rem;
   font-size: 0.9rem;
-  align-self: center; /* Asegura que se centre si es un link */
-  max-width: max-content; /* Evita que ocupe todo el ancho */
+  align-self: center;
+  max-width: max-content;
 }
-
-/* BADGE */
 .badge {
   position: absolute;
   left: 12px;
@@ -361,13 +354,11 @@ img {
   font-size: 0.78rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
-
-/* CARD ACTIONS & DETAILS */
 .card-actions {
   display: flex;
   gap: 0.6rem;
   margin-top: 0.6rem;
-  justify-content: center; /* <-- AÑADE ESTA LÍNEA */
+  justify-content: center;
 }
 .card-details {
   margin-top: 0.8rem;
@@ -379,13 +370,13 @@ img {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease, padding-top 0.3s ease; /* Transición suave */
+  transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease,
+    padding-top 0.3s ease;
 }
 .card-details.visible-details {
   opacity: 1;
-  max-height: 500px; /* Un valor grande para permitir que se expanda */
-  /* Re-aplicamos el espaciado superior que quitamos al ocultar */
-  margin-top: 0.8rem; 
+  max-height: 500px;
+  margin-top: 0.8rem;
   padding-top: 0.5rem;
   display: block;
 }
@@ -402,7 +393,7 @@ img {
   margin-right: 0.35rem;
 }
 
-/* MODAL */
+/* MODAL GALERÍA */
 .modal {
   position: fixed;
   inset: 0;
@@ -420,26 +411,17 @@ img {
   background: linear-gradient(180deg, #0f0f0f, #161616);
   border-radius: var(--radius-lg);
   padding: 1rem;
-  max-width: 800px; /* Más angosto, solo para la foto */
+  max-width: 800px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr; /* 1 sola columna */
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
   position: relative;
 }
-/* ========================================================= */
-/* CORRECCIÓN IMAGEN MODAL (PC) */
-/* ========================================================= */
-.modal-card img {
-  width: 100%;
-  height: 500px; /* Más altura para la foto principal */
-  object-fit: cover; /* Cambiado a 'cover' para llenar el espacio */
-  border-radius: 8px;
-  background-color: #000;
-}
+
 .modal-info {
-  display: none; /* OCULTAMOS TODA LA INFO */
+  display: none;
 }
 .cerrar {
   position: absolute;
@@ -450,6 +432,12 @@ img {
   border: 0;
   font-size: 26px;
   cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+.cerrar:hover {
+  color: var(--accent);
 }
 .carrousel {
   display: flex;
@@ -457,7 +445,7 @@ img {
   flex-wrap: wrap;
   margin-top: 0.5rem;
   align-items: center;
-  justify-content: center; /* <-- AÑADE ESTA LÍNEA */
+  justify-content: center;
 }
 .carrousel img {
   width: 70px;
@@ -476,7 +464,7 @@ img {
   box-shadow: 0 6px 18px rgba(212, 175, 55, 0.08);
 }
 
-/* CONTACT GRID */
+/* CONTACTO Y MAPA */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -486,8 +474,6 @@ img {
 .contact-grid h2 {
   margin-top: 0;
 }
-
-/* MAP */
 .map-container {
   margin-top: 1.2rem;
   border-radius: var(--radius-lg);
@@ -500,7 +486,7 @@ img {
   display: block;
 }
 
-/* ANIMACIONES Y VISIBLE (Usado por las cards y secciones) */
+/* ANIMACIONES */
 .fade-in {
   opacity: 0;
   transform: translateY(18px);
@@ -511,7 +497,7 @@ img {
   transform: none;
 }
 
-/* FOOTER */
+/* FOOTER Y SOCIAL ICONS */
 footer {
   text-align: center;
   padding: 3rem 1rem 2rem;
@@ -520,8 +506,28 @@ footer {
   margin-top: 2rem;
   border-top: 1px solid var(--glass);
 }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.social-icons a {
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+.social-icons a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+.social-icons svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
 
-/* Gradiente suave al final del Hero */
+/* GRADIENTE HERO */
 .hero::after {
   content: "";
   position: absolute;
@@ -533,21 +539,158 @@ footer {
   z-index: 1;
 }
 
-/* ========================================================= */
-/* RESPONSIVE (MÓVIL PRIMERO) */
-/* ========================================================= */
+/* --- (NUEVO) Estilos para Video Modal --- */
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 550px; /* Misma altura que tenías para #imagen-principal */
+  border-radius: 8px;
+  background-color: #000;
+  overflow: hidden; /* Para que el iframe no se desborde */
+}
+.media-container > #imagen-principal,
+.media-container > #video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 550px;
+  border-radius: 8px;
+}
+.modal-card img#imagen-principal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
+}
+#youtube-iframe,
+#local-video {
+  width: 100%;
+  height: 550px;
+  border: 0;
+  object-fit: cover;
+}
+.thumb-video {
+  background-color: #333;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-@media (min-width: 901px) { /* Usamos 901px para no solapar con break-md */
+/* ========================================================= */
+/* Modal de Información Simple (Botón cerrar actualizado) */
+/* ========================================================= */
+.info-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1600;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+.info-modal[aria-hidden="false"] {
+  display: flex;
+}
+.info-modal-content {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 0.5rem;
+  max-width: 600px;
+  width: calc(100vw - 2rem);
+  max-height: 90vh;
+  box-shadow: var(--shadow-1);
+}
+.info-modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+/* (ACTUALIZADO) Botón cerrar del modal de info, igual a .cerrar */
+.info-modal-cerrar {
+  position: absolute;
+  top: 10px; /* Ajustado para este modal */
+  right: 10px; /* Ajustado para este modal */
+  /* Estilos copiados de .cerrar */
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  font-size: 26px; /* Mismo tamaño */
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease; /* Mismo hover */
+  /* Asegurar z-index y quitar estilos anteriores no necesarios */
+  z-index: 1610;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal; /* Asegurar peso normal */
+}
+
+.info-modal-cerrar:hover {
+  color: var(--accent); /* Mismo hover */
+  transform: none; /* Asegurar que no haya scale */
+}
+
+/* Botones Slider */
+.info-modal-prev,
+.info-modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--text);
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1605;
+  display: none;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  transition: background 0.2s ease;
+}
+.info-modal-prev:hover,
+.info-modal-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.info-modal-prev {
+  left: 10px;
+}
+.info-modal-next {
+  right: 10px;
+}
+.info-modal.slider-active .info-modal-prev,
+.info-modal.slider-active .info-modal-next {
+  display: block;
+}
+
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
+@media (min-width: 901px) {
   .vehiculos-container {
-    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
-    
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (max-width: 900px) {
   .modal-card {
     grid-template-columns: 1fr 280px;
   }
-}
+} /* Este media query puede necesitar ajuste si el modal-card cambió */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -586,12 +729,19 @@ footer {
     grid-template-columns: 1fr;
     padding: 0.8rem;
   }
-  /* ========================================================= */
-  /* CORRECCIÓN IMAGEN MODAL (MÓVIL) */
-  /* ========================================================= */
-  .modal-card img {
-    height: 280px; /* Altura más chica para móvil */
+
+  /* (MODIFICADO) */
+  .media-container {
+    height: 300px;
   }
+  #youtube-iframe,
+  #local-video {
+    width: 100%;
+    height: 290px;
+    border: 0;
+    object-fit: cover;
+  }
+
   .carrousel img {
     width: 60px;
     height: 45px;
@@ -599,24 +749,16 @@ footer {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
-  /* CORRECCIÓN IMAGEN CARD (MÓVIL) */
-  /* ========================================================= */
- 
-
-  /* CORRECCIÓN HERO MÓVIL */
   .hero {
-    align-items: center; /* Volvemos a centrar el texto en móvil */
+    align-items: center;
   }
-
   .hero .hero-bg {
     background-size: 150% auto;
     background-repeat: no-repeat;
     animation: fadeInBackground 1.2s ease-out 0.1s forwards;
   }
-
   .hero .hero-inner {
-    padding: 2rem 1rem; /* Padding simple para centrar */
+    padding: 2rem 1rem;
   }
   .hero .hero-inner h1 {
     font-size: 1.1rem;
@@ -626,17 +768,46 @@ footer {
   h2 {
     font-size: 1.8rem;
   }
-
   .card-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  cursor: pointer;
-  display: block;
-}
-}
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+  }
 
-/* Desktop map narrower */
+  /* Ajuste botón cerrar modal info en móvil */
+  .info-modal-cerrar {
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+  }
+
+  .info-modal-content {
+    max-width: calc(100vw - 2rem);
+  }
+
+  /* (CORREGIDO) */
+  .info-modal-content img {
+    width: 100%;
+    height: auto; /* Estaba en 200% y rompía la imagen */
+  }
+
+  /* Ajuste botones slider en móvil */
+  .info-modal-prev,
+  .info-modal-next {
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    padding: 0.1rem 0.6rem;
+  }
+  .info-modal-prev {
+    left: 5px;
+  }
+  .info-modal-next {
+    right: 5px;
+  }
+}
 @media (min-width: 769px) {
   .map-container iframe {
     max-width: 600px;
@@ -650,3 +821,5 @@ blockquote,
 pre {
   max-width: 100%;
 }
+
+

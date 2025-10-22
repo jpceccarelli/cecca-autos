@@ -103,7 +103,7 @@ function createCard(veh) {
   img.loading = "lazy";
   picture.appendChild(img);
 
-  const body = document.createElement("img");
+  const body = document.createElement("div");
   body.className = "card-content";
 
   body.innerHTML = `
@@ -149,7 +149,7 @@ function createCard(veh) {
   );
   btnWhatsapp.target = "_blank";
   btnWhatsapp.rel = "noopener";
-  const details = document.createElement("img");
+  const details = document.createElement("div");
   details.className = "card-details";
   details.id = `details-${card.dataset.id}`;
   details.hidden = true; // Oculto por defecto
@@ -265,7 +265,7 @@ function abrirModal(veh, triggerEl = null) {
 
     // 2. (NUEVO ORDEN) Añadir thumbnail de VIDEO AL FINAL si existe
     if (veh.video) {
-      videoThumbEl = document.createElement("img"); // <-- Corregido a DIV
+      videoThumbEl = document.createElement("div"); // <-- Corregido a DIV
       videoThumbEl.className = "thumb thumb-video";
       videoThumbEl.setAttribute(
         "aria-label",
@@ -727,8 +727,4 @@ setTimeout(() => {
   });
   /* --- FIN DEL CÓDIGO --- */
 
-
 }); // Fin DOMContentLoaded
-
-
-

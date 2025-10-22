@@ -206,20 +206,17 @@ body {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   color: #000;
 }
-/* CÓDIGO ACTUALIZADO */
 .btn-ghost {
   background: transparent;
-  color: var(--text); /* <-- Se mantiene el color de texto blanco */
-  border: 1px solid var(--accent); /* <-- MODIFICADO: Borde dorado para más visibilidad */
+  color: var(--text);
+  border: 1px solid var(--accent);
   padding: 0.6rem 0.9rem;
   border-radius: 8px;
-  transition: all 0.2s ease-out; /* <-- AÑADIDO: Para una transición suave */
+  transition: all 0.2s ease-out;
 }
-
-/* AÑADIDO: Efecto hover/focus para que se rellene (el que te gustó) */
 .btn-ghost:hover {
   background: var(--accent);
-  color: #000; /* Color de texto oscuro al rellenarse */
+  color: #000;
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
 }
 .btn-whatsapp {
@@ -229,30 +226,28 @@ body {
   border-radius: 999px;
   font-weight: 700;
   display: inline-block;
-  /* Efecto hover WhatsApp */
   transition: all 0.2s ease-out;
 }
-
 .btn-whatsapp:hover,
 .btn-whatsapp:focus {
   transform: translateY(-3px);
   filter: brightness(1.1);
   box-shadow: 0 5px 15px rgba(212, 175, 55, 0.25);
 }
-
 .btn-info-modal {
   margin-top: 1.5rem;
 }
 
 /* SECCIONES */
 .section {
-  padding: 5.2rem 1.25rem;
+  padding: 2.5rem 1.25rem;
 }
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+ padding-top: 45px;
 }
 
 /* TÍTULOS */
@@ -302,7 +297,7 @@ h2 {
 .card picture,
 .card img {
   display: block;
-} /* Aseguramos display block */
+}
 .card-img {
   width: 100%;
   height: 240px;
@@ -447,7 +442,8 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-.carrousel img {
+/* Estilos compartidos para thumbs */
+.carrousel .thumb {
   width: 70px;
   height: 50px;
   object-fit: cover;
@@ -455,11 +451,13 @@ h2 {
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.18s;
+  display: inline-block;
+  vertical-align: middle;
 }
-.carrousel img:hover {
+.carrousel .thumb:hover {
   border-color: var(--accent);
 }
-.carrousel img.active {
+.carrousel .thumb.active {
   border-color: var(--accent);
   box-shadow: 0 6px 18px rgba(212, 175, 55, 0.08);
 }
@@ -506,25 +504,106 @@ footer {
   margin-top: 2rem;
   border-top: 1px solid var(--glass);
 }
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+
+.social-icons { 
+  display: flex; 
+  justify-content: center; 
+  gap: 2.5rem; /* <--- AUMENTADO */
+  margin-top: 2.5rem; 
 }
-.social-icons a {
-  color: var(--muted);
-  transition: color 0.2s ease, transform 0.2s ease;
-  display: inline-block;
+.social-icons a { 
+  color: var(--muted); 
+  transition: color 0.2s ease, transform 0.2s ease; 
+  display: inline-block; 
 }
-.social-icons a:hover {
+
+/* ESTILO AL PRESIONAR (Móvil y PC) */
+.social-icons a:active {
   color: var(--accent);
-  transform: translateY(-3px);
+  transform: translateY(-3px); 
 }
-.social-icons svg {
-  width: 28px;
-  height: 28px;
-  fill: currentColor;
+
+.logo-ticker-section {
+  padding-top: 1rem; /* Menos padding arriba */
+  padding-bottom: 2rem; /* Más padding abajo */
+  background-color: #0d0d0d; /* Fondo sutil si quieres */
+  
+}
+
+.logo-ticker {
+  width: 100%;
+  overflow: hidden; /* Oculta lo que se sale */
+  position: relative; /* Para posibles efectos de degradado */
+  /* Opcional: Máscara con degradado en los bordes */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.logo-ticker__track {
+  display: flex;
+  align-items: center; /* Centra verticalmente los logos */
+  gap: 4rem; /* Espacio entre logos */
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem 0; /* Pequeño padding vertical */
+  width: max-content; /* Se ajusta al contenido */
+  
+  /* Animación */
+  animation: scroll 30s linear infinite; 
+}
+
+/* Pausar animación al pasar el mouse (opcional) */
+.logo-ticker:hover .logo-ticker__track {
+  animation-play-state: paused;
+}
+
+.logo-ticker__track li {
+  flex-shrink: 0; /* Evita que los logos se achiquen */
+}
+
+.logo-ticker__track img {
+  display: block; /* Quita espacio extra debajo */
+  max-height: 100px; /* Altura máxima (ajusta según tus logos) */
+  width: auto;     /* Ancho automático */
+  filter: grayscale(1) brightness(0.8); /* Efecto B&N tenue */
+  opacity: 0.8;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre un logo (opcional) */
+.logo-ticker__track img:hover {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+}
+
+/* Definición de la animación */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Mueve hacia la izquierda la mitad del ancho total (porque duplicamos los logos) */
+    transform: translateX(calc(-50% - (var(--logo-gap, 4rem) / 2))); 
+  }
+}
+
+/* Ajuste para el gap en el cálculo de translateX */
+:root { --logo-gap: 4rem; } /* Define el gap como variable CSS */
+.logo-ticker__track { gap: var(--logo-gap);}
+
+/* ESTILO HOVER (SOLO PC con mouse) */
+@media (hover: hover) {
+  .social-icons a:hover { 
+    color: var(--accent); 
+    transform: translateY(-3px); 
+  }
+}
+
+/* Estilo del SVG */
+.social-icons svg { 
+  width: 28px; 
+  height: 28px; 
+  fill: currentColor; 
 }
 
 /* GRADIENTE HERO */
@@ -539,22 +618,22 @@ footer {
   z-index: 1;
 }
 
-/* --- (NUEVO) Estilos para Video Modal --- */
+/* --- Estilos para Video Modal --- */
 .media-container {
   position: relative;
   width: 100%;
-  height: 550px; /* Misma altura que tenías para #imagen-principal */
+  height: 450px; /* Ajustado para proporción ~16:9 */
   border-radius: 8px;
   background-color: #000;
-  overflow: hidden; /* Para que el iframe no se desborde */
+  overflow: hidden;
 }
 .media-container > #imagen-principal,
-.media-container > #video-container {
+.media-container > .video-container { /* Aplica a ambos contenedores de video */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 550px;
+  height: 100%; /* Ocupa la altura del .media-container */
   border-radius: 8px;
 }
 .modal-card img#imagen-principal {
@@ -566,20 +645,20 @@ footer {
 #youtube-iframe,
 #local-video {
   width: 100%;
-  height: 550px;
+  height: 100%; /* Ocupa la altura de su contenedor (.video-container) */
   border: 0;
-  object-fit: cover;
+  /* object-fit: cover; <- No aplica a iframe, object-fit: contain; es default para video */
 }
 .thumb-video {
   background-color: #333;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>');
-  background-size: 50%;
+  background-size: 40%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 /* ========================================================= */
-/* Modal de Información Simple (Botón cerrar actualizado) */
+/* Modal de Información Simple */
 /* ========================================================= */
 .info-modal {
   position: fixed;
@@ -595,12 +674,14 @@ footer {
 .info-modal[aria-hidden="false"] {
   display: flex;
 }
+
+/* --- TAMAÑOS ORIGINALES (PARA TODOS LOS INFO-MODAL) --- */
 .info-modal-content {
   position: relative;
   background: var(--card);
   border-radius: var(--radius-lg);
   padding: 0.5rem;
-  max-width: 600px;
+  max-width: 600px; /* <-- TAMAÑO ORIGINAL */
   width: calc(100vw - 2rem);
   max-height: 90vh;
   box-shadow: var(--shadow-1);
@@ -609,37 +690,42 @@ footer {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 80vh;
+  max-height: 75vh; /* <-- TAMAÑO ORIGINAL */
   object-fit: contain;
   border-radius: var(--radius);
 }
 
-/* (ACTUALIZADO) Botón cerrar del modal de info, igual a .cerrar */
+/* --- TAMAÑOS GRANDES SOLO PARA .modal-grande (DESKTOP) --- */
+.info-modal.modal-grande .info-modal-content {
+  max-width: 900px; /* <-- TAMAÑO GRANDE */
+}
+.info-modal.modal-grande .info-modal-content img {
+  max-height: 88vh; /* <-- TAMAÑO GRANDE */
+}
+
+/* (ACTUALIZADO) Botón cerrar del modal de info */
 .info-modal-cerrar {
   position: absolute;
-  top: 10px; /* Ajustado para este modal */
-  right: 10px; /* Ajustado para este modal */
-  /* Estilos copiados de .cerrar */
+  top: 10px;
+  right: 10px;
   background: transparent;
   color: var(--text);
   border: 0;
-  font-size: 26px; /* Mismo tamaño */
+  font-size: 26px;
   cursor: pointer;
   padding: 0;
   line-height: 1;
-  transition: color 0.2s ease; /* Mismo hover */
-  /* Asegurar z-index y quitar estilos anteriores no necesarios */
+  transition: color 0.2s ease;
   z-index: 1610;
   width: auto;
   height: auto;
   border-radius: 0;
   box-shadow: none;
-  font-weight: normal; /* Asegurar peso normal */
+  font-weight: normal;
 }
-
 .info-modal-cerrar:hover {
-  color: var(--accent); /* Mismo hover */
-  transform: none; /* Asegurar que no haya scale */
+  color: var(--accent);
+  transform: none;
 }
 
 /* Botones Slider */
@@ -687,10 +773,8 @@ footer {
   }
 }
 @media (max-width: 900px) {
-  .modal-card {
-    grid-template-columns: 1fr 280px;
-  }
-} /* Este media query puede necesitar ajuste si el modal-card cambió */
+ 
+}
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -730,19 +814,16 @@ footer {
     padding: 0.8rem;
   }
 
-  /* (MODIFICADO) */
   .media-container {
-    height: 300px;
+    height: 225px; /* Ajustado para proporción ~16:9 */
   }
   #youtube-iframe,
   #local-video {
-    width: 100%;
-    height: 290px;
-    border: 0;
-    object-fit: cover;
+    height: 100%; /* Ocupa la altura del .media-container */
   }
 
-  .carrousel img {
+  /* Ajusta tamaño thumbs en móvil */
+  .carrousel .thumb {
     width: 60px;
     height: 45px;
   }
@@ -783,15 +864,30 @@ footer {
     font-size: 24px;
   }
 
+  /* --- INICIO CORRECCIÓN MODAL INFO MÓVIL --- */
+  
+  /* ESTILOS GENERALES (MÁS PEQUEÑOS) PARA INFO-MODAL EN MÓVIL */
   .info-modal-content {
-    max-width: calc(100vw - 2rem);
+    max-width: calc(100vw - 4rem); /* Más margen */
+    width: calc(100vw - 4rem); 
+    max-height: 85vh; /* Altura normal */
+  }
+  .info-modal-content img {
+    max-height: 70vh; /* Imagen un poco más baja */
+    width: 100%; /* Asegura que no se desborde */
+    height: auto; /* Mantiene proporción */
   }
 
-  /* (CORREGIDO) */
-  .info-modal-content img {
-    width: 100%;
-    height: auto; /* Estaba en 200% y rompía la imagen */
+  /* ESTILOS GRANDES (SOLO PARA .modal-grande EN MÓVIL, VAN DESPUÉS)*/
+  .info-modal.modal-grande .info-modal-content {
+    max-width: calc(100vw - 2rem); /* Menos margen (más ancho) */
+    width: calc(100vw - 2rem); 
+    max-height: 90vh; /* Más alto */
   }
+  .info-modal.modal-grande .info-modal-content img {
+    max-height: 85vh; /* Imagen más alta */
+  }
+  /* --- FIN CORRECCIÓN MODAL INFO MÓVIL --- */
 
   /* Ajuste botones slider en móvil */
   .info-modal-prev,
@@ -821,5 +917,3 @@ blockquote,
 pre {
   max-width: 100%;
 }
-
-

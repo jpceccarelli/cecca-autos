@@ -40,6 +40,10 @@ let currentVehiculo = null; // Vehículo actual en modal galería
 let currentIndex = 0; // Índice imagen actual en modal galería
 let releaseFocusTrap = null; // Función para liberar el focus trap
 
+// (NUEVO) Variables para controlar el zoom
+let viewportMetaTag;
+let originalViewportContent;
+
 // --- Helpers ---
 const lockBodyScroll = () =>
   (document.documentElement.style.overflow = "hidden");
@@ -228,7 +232,7 @@ function abrirModal(veh, triggerEl = null) {
     imagenPrincipal.loading = "eager";
   }
 
-  /* --- INICIO DEL CÓDIGO CORREGIDO PARA EL ORDEN --- */
+  /* --- INICIO DEL CÓDIGO CON ORDEN CORREGIDO Y DIV --- */
   if (carrousel) {
     carrousel.innerHTML = ""; // Limpiar carrusel
     const thumbsSources =
@@ -261,7 +265,7 @@ function abrirModal(veh, triggerEl = null) {
 
     // 2. (NUEVO ORDEN) Añadir thumbnail de VIDEO AL FINAL si existe
     if (veh.video) {
-      videoThumbEl = document.createElement("div"); // <-- ¡CORREGIDO A DIV!
+      videoThumbEl = document.createElement("div"); // <-- Corregido a DIV
       videoThumbEl.className = "thumb thumb-video";
       videoThumbEl.setAttribute(
         "aria-label",
@@ -287,7 +291,7 @@ function abrirModal(veh, triggerEl = null) {
       carrousel.appendChild(videoThumbEl); // <-- Se añade al final
     }
   }
-  /* --- FIN DEL CÓDIGO CORREGIDO PARA EL ORDEN --- */
+  /* --- FIN DEL CÓDIGO CON ORDEN CORREGIDO Y DIV --- */
 
   // Enfocar el botón cerrar
   if (isFocusable(btnCerrar)) btnCerrar.focus();
@@ -307,16 +311,13 @@ function setMainImage(index, images) {
   if (youtubeContainer) youtubeContainer.style.display = "none";
   if (localVideoContainer) localVideoContainer.style.display = "none";
   if (youtubeIframe) youtubeIframe.src = "";
-  if (localVideo) {
-    localVideo.pause();
-    localVideo.src = "";
-  }
+  if (localVideo) { localVideo.pause(); localVideo.src = ""; }
   if (imagenPrincipal) imagenPrincipal.style.display = "block";
 
   const videoThumb = carrousel.querySelector(".thumb-video");
   if (videoThumb) videoThumb.classList.remove("active");
 
-  const imgs = Array.from(carrousel.querySelectorAll("img.thumb"));
+  const imgs = Array.from(carrousel.querySelectorAll("img.thumb")); // Solo selecciona <img>
   if (!imgs[index] || !images || !images[index]) return;
 
   currentIndex = index;
@@ -334,26 +335,25 @@ function setMainVideo(videoUrl) {
   if (videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be")) {
     // Es YouTube
     if (localVideoContainer) localVideoContainer.style.display = "none";
-    if (localVideo) {
-      localVideo.pause();
-      localVideo.src = "";
-    }
+    if (localVideo) { localVideo.pause(); localVideo.src = ""; }
 
     if (youtubeContainer) youtubeContainer.style.display = "block";
 
     try {
       const url = new URL(videoUrl);
-      const videoId = url.pathname.split("/").pop();
+      const videoId = url.pathname.split('/').pop();
       const cleanUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
       cleanUrl.searchParams.set("autoplay", "1");
       cleanUrl.searchParams.set("rel", "0");
       cleanUrl.searchParams.set("modestbranding", "1");
 
       if (youtubeIframe) youtubeIframe.src = cleanUrl.href;
+
     } catch (e) {
       console.error("URL de YouTube inválida:", videoUrl, e);
       if (youtubeIframe) youtubeIframe.src = videoUrl; // Fallback
     }
+
   } else {
     // Es un video local
     if (youtubeContainer) youtubeContainer.style.display = "none";
@@ -362,7 +362,7 @@ function setMainVideo(videoUrl) {
     if (localVideoContainer) localVideoContainer.style.display = "block";
     if (localVideo) {
       localVideo.src = videoUrl;
-      localVideo.play().catch((e) => console.warn("Autoplay bloqueado:", e));
+      localVideo.play().catch(e => console.warn("Autoplay bloqueado:", e));
     }
   }
 }
@@ -375,10 +375,7 @@ function cerrarModalHandler() {
 
   // Detener AMBOS videos
   if (youtubeIframe) youtubeIframe.src = "";
-  if (localVideo) {
-    localVideo.pause();
-    localVideo.src = "";
-  }
+  if (localVideo) { localVideo.pause(); localVideo.src = ""; }
 
   if (releaseFocusTrap) releaseFocusTrap();
   document.removeEventListener("keydown", handleModalKeydown);
@@ -427,21 +424,28 @@ function handleInfoSliderNav(direction) {
   }
 }
 
+/* --- Función abrirInfoModal (CON SOPORTE PARA ZOOM) --- */
 function abrirInfoModal(triggerEl) {
   if (!infoModal || !infoModalImg || !btnInfoModalCerrar) {
     console.error("Elementos del modal de información no encontrados.");
     return;
   }
 
+  // Habilitar zoom al abrir el modal de info
+  if (viewportMetaTag) {
+    viewportMetaTag.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes');
+  }
+
   const singleImgPath = triggerEl.dataset.img;
   const multipleImgPaths = triggerEl.dataset.imgs;
+  const esModalGrande = triggerEl.classList.contains("info-modal-grande");
 
   lastFocusedEl = triggerEl || document.activeElement;
   infoModalImg.alt = triggerEl.getAttribute("aria-label") || "Información";
 
   infoImagePaths = [];
   currentInfoImageIndex = 0;
-  infoModal.classList.remove("slider-active");
+  infoModal.classList.remove("slider-active", "modal-grande");
   if (btnInfoPrev) btnInfoPrev.style.display = "none";
   if (btnInfoNext) btnInfoNext.style.display = "none";
   if (btnInfoPrev) {
@@ -456,10 +460,7 @@ function abrirInfoModal(triggerEl) {
   }
 
   if (multipleImgPaths) {
-    infoImagePaths = multipleImgPaths
-      .split(",")
-      .map((s) => s.trim())
-      .filter((s) => s);
+    infoImagePaths = multipleImgPaths.split(",").map(s => s.trim()).filter(s => s);
     if (infoImagePaths.length > 0) {
       infoModal.classList.add("slider-active");
       if (btnInfoPrev) {
@@ -484,6 +485,10 @@ function abrirInfoModal(triggerEl) {
     return;
   }
 
+  if (esModalGrande) {
+      infoModal.classList.add("modal-grande");
+  }
+
   infoModal.setAttribute("aria-hidden", "false");
   infoModal.style.display = "flex";
   lockBodyScroll();
@@ -492,24 +497,26 @@ function abrirInfoModal(triggerEl) {
   releaseFocusTrap = trapFocus(infoModal);
   document.addEventListener("keydown", handleInfoModalKeydown);
   if (infoModalImg) {
-    infoModalImg.addEventListener("touchstart", handleTouchStart, {
-      passive: true,
-    });
-    infoModalImg.addEventListener("touchmove", handleTouchMove, {
-      passive: false,
-    });
-    infoModalImg.addEventListener("touchend", handleTouchEnd, {
-      passive: true,
-    });
+    infoModalImg.addEventListener("touchstart", handleTouchStart, { passive: true });
+    infoModalImg.addEventListener("touchmove", handleTouchMove, { passive: false });
+    infoModalImg.addEventListener("touchend", handleTouchEnd, { passive: true });
   }
 }
 
+/* --- Función cerrarInfoModal (CON SOPORTE PARA ZOOM) --- */
 function cerrarInfoModal() {
   if (!infoModal) return;
+
+  // Deshabilitar zoom al cerrar el modal de info
+  if (viewportMetaTag && originalViewportContent) {
+    viewportMetaTag.setAttribute('content', originalViewportContent);
+  }
 
   infoModal.setAttribute("aria-hidden", "true");
   infoModal.style.display = "none";
   unlockBodyScroll();
+
+  infoModal.classList.remove("modal-grande", "slider-active");
 
   if (releaseFocusTrap) releaseFocusTrap();
   document.removeEventListener("keydown", handleInfoModalKeydown);
@@ -524,7 +531,6 @@ function cerrarInfoModal() {
     btnInfoNext.parentNode.replaceChild(newNextBtn, btnInfoNext);
     btnInfoNext = newNextBtn;
   }
-  infoModal.classList.remove("slider-active");
 
   if (isFocusable(lastFocusedEl)) lastFocusedEl.focus();
 
@@ -562,16 +568,22 @@ function handleTouchStart(e) {
   touchStartX = e.changedTouches[0].screenX;
 }
 function handleTouchMove(e) {
-  e.preventDefault();
+  // Solo prevenir scroll si estamos haciendo swipe en la imagen del info-modal Y NO haciendo zoom
+  if (e.touches.length === 1 && e.target === infoModalImg && infoModal.classList.contains('slider-active')) {
+      e.preventDefault();
+  }
   touchEndX = e.changedTouches[0].screenX;
 }
 function handleTouchEnd() {
   if (!infoModal.classList.contains("slider-active")) return;
   const swipeThreshold = 50;
-  if (touchStartX - touchEndX > swipeThreshold) {
-    handleInfoSliderNav(1);
-  } else if (touchEndX - touchStartX > swipeThreshold) {
-    handleInfoSliderNav(-1);
+  // Solo detectar swipe si fue con un solo dedo (no durante zoom)
+  if (touchStartX !== 0 && touchEndX !== 0) { // Asegura que hubo movimiento
+      if (touchStartX - touchEndX > swipeThreshold) {
+          handleInfoSliderNav(1);
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+          handleInfoSliderNav(-1);
+      }
   }
   touchStartX = 0;
   touchEndX = 0;
@@ -610,21 +622,33 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCerrar = modal?.querySelector(".cerrar");
   imagenPrincipal = document.getElementById("imagen-principal");
   carrousel = document.getElementById("carrousel");
-  // (ACTUALIZADO)
+  // Video variables
   youtubeContainer = document.getElementById("youtube-container");
   youtubeIframe = document.getElementById("youtube-iframe");
   localVideoContainer = document.getElementById("local-video-container");
   localVideo = document.getElementById("local-video");
+  // Navbar variables
   hamburger = document.getElementById("hamburger");
-  navLinks = document.getElementById("nav-links"); // Variables modal info y slider
+  navLinks = document.getElementById("nav-links");
+  // Info Modal variables
   infoModal = document.getElementById("info-modal");
   infoModalImg = document.getElementById("info-modal-img");
   btnInfoModalCerrar = infoModal?.querySelector(".info-modal-cerrar");
-  btnInfoPrev = infoModal?.querySelector(".info-modal-prev"); // Asignar aquí
-  btnInfoNext = infoModal?.querySelector(".info-modal-next"); // Asignar aquí
+  btnInfoPrev = infoModal?.querySelector(".info-modal-prev");
+  btnInfoNext = infoModal?.querySelector(".info-modal-next");
   infoModalButtons = document.querySelectorAll(".btn-info-modal");
+setTimeout(() => {
+    if (window.innerWidth <= 768) { 
+      window.scrollTo(0, 0); 
+    }
+  }, 10);
+  // Viewport variables for zoom
+  viewportMetaTag = document.querySelector('meta[name="viewport"]');
+  if (viewportMetaTag) {
+    originalViewportContent = viewportMetaTag.getAttribute('content');
+  }
 
-  window.scrollTo(0, 0); // Renderizado inicial
+
 
   if (typeof vehiculos !== "undefined" && Array.isArray(vehiculos)) {
     renderVehiculos();
@@ -690,6 +714,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* --- Quitar foco de iconos sociales DESPUÉS del clic --- */
+  const socialLinks = document.querySelectorAll(".social-icons a");
+  socialLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
+      const targetLink = event.currentTarget;
+      setTimeout(() => {
+        targetLink.blur();
+      }, 100);
+    });
+  });
+  /* --- FIN DEL CÓDIGO --- */
+
 }); // Fin DOMContentLoaded
-
-

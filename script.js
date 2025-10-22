@@ -149,7 +149,7 @@ function createCard(veh) {
   );
   btnWhatsapp.target = "_blank";
   btnWhatsapp.rel = "noopener";
-  const details = document.createElement("div");
+  const details = document.createElement("img");
   details.className = "card-details";
   details.id = `details-${card.dataset.id}`;
   details.hidden = true; // Oculto por defecto
@@ -729,4 +729,5 @@ setTimeout(() => {
 
 
 }); // Fin DOMContentLoaded
+
 

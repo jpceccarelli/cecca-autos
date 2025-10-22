@@ -114,7 +114,7 @@ function createCard(veh) {
     <p class="card-desc">${veh.descripcion || ""}</p>
   `;
 
-  const actions = document.createElement("img");
+  const actions = document.createElement("div");
   actions.className = "card-actions";
   const btnFotos = document.createElement("button");
   btnFotos.className = "btn btn-ghost";
@@ -265,7 +265,7 @@ function abrirModal(veh, triggerEl = null) {
 
     // 2. (NUEVO ORDEN) Añadir thumbnail de VIDEO AL FINAL si existe
     if (veh.video) {
-      videoThumbEl = document.createElement("div"); // <-- Corregido a DIV
+      videoThumbEl = document.createElement("img"); // <-- Corregido a DIV
       videoThumbEl.className = "thumb thumb-video";
       videoThumbEl.setAttribute(
         "aria-label",
@@ -729,5 +729,6 @@ setTimeout(() => {
 
 
 }); // Fin DOMContentLoaded
+
 
 

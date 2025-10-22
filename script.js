@@ -114,7 +114,7 @@ function createCard(veh) {
     <p class="card-desc">${veh.descripcion || ""}</p>
   `;
 
-  const actions = document.createElement("div");
+  const actions = document.createElement("img");
   actions.className = "card-actions";
   const btnFotos = document.createElement("button");
   btnFotos.className = "btn btn-ghost";
@@ -729,3 +729,4 @@ setTimeout(() => {
 
 
 }); // Fin DOMContentLoaded
+

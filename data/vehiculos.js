@@ -7,7 +7,7 @@ const vehiculos = [
     modelo: "208 Allure 115cv- 2019",
     precio: 17300000,
     // (EJEMPLO AÑADIDO) - Reemplaza "VIDEO_ID_AQUI" con el ID de tu video de YouTube
-    video: "http://www.youtube.com/embed/pqKNugNnIoc",
+    //video: "http://www.youtube.com/embed/pqKNugNnIoc",
     imagenPrincipal: "assets/autos/2081.jpeg",
     imagenes: [
       "assets/autos/2081.jpeg",
@@ -33,7 +33,7 @@ const vehiculos = [
     marca: "Renault",
     modelo: "Sandero Pack 8v - 2009",
     precio: 9000000,
-    video: "https://www.youtube.com/embed/6IadFohomac",
+    //video: "https://www.youtube.com/embed/6IadFohomac",
     imagenPrincipal: "assets/autos/sandero1.jpeg",
     // (Sin video, este funciona como antes)
     imagenes: [
@@ -60,7 +60,7 @@ const vehiculos = [
     marca: "Renault",
     modelo: "Duster Privilege 2.0 - 2011",
     precio: 12500000,
-    video: "https://www.youtube.com/embed/QXa1GI_9J9Q",
+    //video: "https://www.youtube.com/embed/QXa1GI_9J9Q",
     imagenPrincipal: "assets/autos/duster1.jpeg",
     imagenes: [
       "assets/autos/duster1.jpeg",
@@ -86,7 +86,7 @@ const vehiculos = [
     marca: "Volkswagen",
     modelo: "Amarok 2.0 Highline 163cv - 2011",
     precio: 23500000,
-    video: "https://www.youtube.com/embed/X2YbnlyhNNY",
+    //video: "https://www.youtube.com/embed/X2YbnlyhNNY",
     imagenPrincipal: "assets/autos/amarok1.jpeg",
     imagenes: [
       "assets/autos/amarok1.jpeg",
@@ -112,7 +112,7 @@ const vehiculos = [
     marca: "Honda",
     modelo: "XR 250R - 1994",
     precio: 5700000,
-    video: "https://www.youtube.com/embed/tBWXijUlBMI",
+    //video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/motos/xr1.jpeg",
     imagenes: [
       "assets/motos/xr1.jpeg",
@@ -131,3 +131,6 @@ const vehiculos = [
     whatsapp: "5492616256518",
   },
 ];
+
+
+//PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO//

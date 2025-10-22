@@ -103,7 +103,7 @@ function createCard(veh) {
   img.loading = "lazy";
   picture.appendChild(img);
 
-  const body = document.createElement("div");
+  const body = document.createElement("img");
   body.className = "card-content";
 
   body.innerHTML = `
@@ -726,5 +726,6 @@ setTimeout(() => {
     });
   });
   /* --- FIN DEL CÓDIGO --- */
+
 
 }); // Fin DOMContentLoaded

@@ -6,7 +6,8 @@ const vehiculos = [
     marca: "Peugeot",
     modelo: "208 Allure 115cv- 2019",
     precio: 17300000,
-
+    // (EJEMPLO AÑADIDO) - Reemplaza "VIDEO_ID_AQUI" con el ID de tu video de YouTube
+    video: "http://www.youtube.com/embed/pqKNugNnIoc",
     imagenPrincipal: "assets/autos/2081.jpeg",
     imagenes: [
       "assets/autos/2081.jpeg",
@@ -21,7 +22,7 @@ const vehiculos = [
       Color: "Bordeaux",
       Kms: "80.000",
       Combustible: "Nafta",
-      Permuta: "Si"
+      Permuta: "Si",
     },
     vin: "VINSANDERO0002",
     whatsapp: "5492616256518",
@@ -32,8 +33,9 @@ const vehiculos = [
     marca: "Renault",
     modelo: "Sandero Pack 8v - 2009",
     precio: 9000000,
+    video: "https://www.youtube.com/embed/6IadFohomac",
     imagenPrincipal: "assets/autos/sandero1.jpeg",
-
+    // (Sin video, este funciona como antes)
     imagenes: [
       "assets/autos/sandero1.jpeg",
       "assets/autos/sandero2.jpeg",
@@ -47,7 +49,7 @@ const vehiculos = [
       Color: "Negro",
       Kms: "108.000",
       Combustible: "Nafta",
-      Permuta: "Si"
+      Permuta: "Si",
     },
     vin: "VINSANDERO0002",
     whatsapp: "5492616256518",
@@ -58,6 +60,7 @@ const vehiculos = [
     marca: "Renault",
     modelo: "Duster Privilege 2.0 - 2011",
     precio: 12500000,
+    video: "https://www.youtube.com/embed/QXa1GI_9J9Q",
     imagenPrincipal: "assets/autos/duster1.jpeg",
     imagenes: [
       "assets/autos/duster1.jpeg",
@@ -65,7 +68,6 @@ const vehiculos = [
       "assets/autos/duster3.jpeg",
       "assets/autos/duster4.jpeg",
     ],
-
     specs: {
       Año: "2011",
       Motor: "2.0 L",
@@ -73,7 +75,7 @@ const vehiculos = [
       Color: "Negro",
       kms: "210.000",
       Combustible: "Nafta-GNC",
-      Permuta: "Si"
+      Permuta: "Si",
     },
     vin: "VINDUSTER0003",
     whatsapp: "5492616256518",
@@ -84,6 +86,7 @@ const vehiculos = [
     marca: "Volkswagen",
     modelo: "Amarok 2.0 Highline 163cv - 2011",
     precio: 23500000,
+    video: "https://www.youtube.com/embed/X2YbnlyhNNY",
     imagenPrincipal: "assets/autos/amarok1.jpeg",
     imagenes: [
       "assets/autos/amarok1.jpeg",
@@ -91,7 +94,6 @@ const vehiculos = [
       "assets/autos/amarok3.jpeg",
       "assets/autos/amarok4.jpeg",
     ],
-
     specs: {
       Año: "2011",
       Motor: "2.0 L",
@@ -99,7 +101,7 @@ const vehiculos = [
       Color: "Gris",
       kms: "157.000",
       Combustible: "Diesel",
-      Permuta: "Si"
+      Permuta: "Si",
     },
     vin: "VINAMAROK0004",
     whatsapp: "5492616965475",
@@ -109,9 +111,8 @@ const vehiculos = [
     tipo: "moto",
     marca: "Honda",
     modelo: "XR 250R - 1994",
-
     precio: 5700000,
-
+    video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/motos/xr1.jpeg",
     imagenes: [
       "assets/motos/xr1.jpeg",
@@ -124,12 +125,9 @@ const vehiculos = [
       Cilindrada: "250 cc",
       Color: "Blanca",
       kms: "0",
-      Permuta: "Si"
+      Permuta: "Si",
     },
     vin: "VINXR2500005",
     whatsapp: "5492616256518",
   },
 ];
-
-
-

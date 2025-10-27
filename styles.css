@@ -97,13 +97,16 @@ body {
   align-items: center;
 }
 .nav-links a {
-  color: var(--text);
-  font-weight: 600;
-  padding: 0.35rem;
-  border-radius: 6px;
+color: var(--text);
+font-weight: 600;
+padding: 0.35rem;
+border-radius: 6px;
+display: inline-block; /* <-- AÑADIDO */
+transition: transform 0.2s ease-out, color 0.2s ease-out; /* <-- AÑADIDO */
 }
 .nav-links a:hover {
-  color: var(--accent);
+color: var(--accent);
+transform: scale(1.1); /* <-- AÑADIDO (agranda un 10%) */
 }
 .hamburger {
   display: none;

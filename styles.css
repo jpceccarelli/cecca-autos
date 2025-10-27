@@ -89,12 +89,12 @@ body {
   text-decoration: none;
 }
 .nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+display: flex;
+gap: 0.5rem; /* <-- Asegúrate de haber aumentado este valor */
+list-style: none;
+margin: 0;
+padding: 0;
+align-items: center;
 }
 .nav-links a {
 color: var(--text);
@@ -103,6 +103,13 @@ padding: 0.35rem;
 border-radius: 6px;
 display: inline-block; /* <-- AÑADIDO */
 transition: transform 0.2s ease-out, color 0.2s ease-out; /* <-- AÑADIDO */
+}
+.nav-links a svg {
+    display: block; /* Para que ocupe su propio espacio */
+    width: 30px;    /* Ancho del ícono */
+    height: 30px;   /* Alto del ícono */
+    stroke: currentColor; /* El color del ícono seguirá el color del texto del enlace */
+    stroke-width: 2; /* Grosor del trazo */
 }
 .nav-links a:hover {
 color: var(--accent);

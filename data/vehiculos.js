@@ -106,8 +106,35 @@ const vehiculos = [
     vin: "VINAMAROK0004",
     whatsapp: "5492616965475",
   },
+  
   {
     id: "5",
+    tipo: "furgón",
+    marca: "Fiat",
+    modelo: "Fiorino Fire - 2009",
+    precio: 9000000,
+    //video: "https://www.youtube.com/embed/tBWXijUlBMI",
+    imagenPrincipal: "assets/autos/xr1.jpeg",
+    imagenes: [
+      "assets/motos/xr1.jpeg",
+      "assets/motos/xr2.jpeg",
+      "assets/motos/xr3.jpeg",
+      "assets/motos/xr4.jpeg",
+    ],
+    specs: {
+      Año: "2009",
+      Motor: "1.4 8V",
+      Transmisión: "Manual",
+      Color: "Gris",
+      kms: "175.000",
+      Combustible: "Nafta-GNC",
+      Permuta: "Si",
+    },
+    vin: "VINXR2500005",
+    whatsapp: "5492616256518",
+  },
+  {
+    id: "6",
     tipo: "moto",
     marca: "Honda",
     modelo: "XR 250R - 1994",
@@ -134,3 +161,4 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+

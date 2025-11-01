@@ -114,12 +114,12 @@ const vehiculos = [
     modelo: "Fiorino Fire - 2009",
     precio: 9000000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
-    imagenPrincipal: "assets/autos/xr1.jpeg",
+    imagenPrincipal: "assets/autos/IMG_3900.jpeg",
     imagenes: [
-      "assets/motos/xr1.jpeg",
-      "assets/motos/xr2.jpeg",
-      "assets/motos/xr3.jpeg",
-      "assets/motos/xr4.jpeg",
+      "assets/autos/IMG_3899.jpeg",
+      "assets/autos/IMG_3903.jpeg",
+      "assets/autos/IMG_3907.jpeg",
+      "assets/autos/IMG_3908.jpeg",
     ],
     specs: {
       Año: "2009",
@@ -161,5 +161,6 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 

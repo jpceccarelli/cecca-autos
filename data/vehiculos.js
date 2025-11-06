@@ -112,14 +112,15 @@ const vehiculos = [
     tipo: "furgón",
     marca: "Fiat",
     modelo: "Fiorino Fire - 2009",
-    precio: 9000000,
+    precio: 9800000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/autos/IMG_3900.jpeg",
     imagenes: [
-      "assets/autos/IMG_3899.jpeg",
+      "assets/autos/IMG_3900.jpeg",
       "assets/autos/IMG_3903.jpeg",
       "assets/autos/IMG_3907.jpeg",
-      "assets/autos/IMG_3908.jpeg",
+      "assets/autos/fiorino2.jpeg",
+      "assets/autos/fiorino3.jpeg",
     ],
     specs: {
       Año: "2009",
@@ -161,6 +162,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

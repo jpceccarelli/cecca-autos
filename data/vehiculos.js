@@ -134,34 +134,11 @@ const vehiculos = [
     vin: "VINXR2500005",
     whatsapp: "5492616256518",
   },
-  {
-    id: "6",
-    tipo: "moto",
-    marca: "Honda",
-    modelo: "XR 250R - 1994",
-    precio: 5700000,
-    //video: "https://www.youtube.com/embed/tBWXijUlBMI",
-    imagenPrincipal: "assets/motos/xr1.jpeg",
-    imagenes: [
-      "assets/motos/xr1.jpeg",
-      "assets/motos/xr2.jpeg",
-      "assets/motos/xr3.jpeg",
-      "assets/motos/xr4.jpeg",
-    ],
-    specs: {
-      Año: "1994",
-      Cilindrada: "250 cc",
-      Color: "Blanca",
-      kms: "0",
-      Permuta: "Si",
-    },
-    vin: "VINXR2500005",
-    whatsapp: "5492616256518",
-  },
 ];
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

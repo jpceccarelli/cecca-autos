@@ -8,14 +8,14 @@ const vehiculos = [
     precio: 15000000,
     // (EJEMPLO AÑADIDO) - Reemplaza "VIDEO_ID_AQUI" con el ID de tu video de YouTube
     //video: "http://www.youtube.com/embed/pqKNugNnIoc",
-    imagenPrincipal: "assets/autos/focus1.jpeg",
+    imagenPrincipal: "assets/autos/focus1.jpg",
     imagenes: [
-      "assets/autos/focus2.jpeg",
-      "assets/autos/focus3.jpeg",
-      "assets/autos/focus4.jpeg",
-      "assets/autos/focus5.jpeg",
-      "assets/autos/focus6.jpeg",
-      "assets/autos/focus7.jpeg",   
+      "assets/autos/focus2.jpg",
+      "assets/autos/focus3.jpg",
+      "assets/autos/focus4.jpg",
+      "assets/autos/focus5.jpg",
+      "assets/autos/focus6.jpg",
+      "assets/autos/focus7.jpg",   
     ],
     specs: {
       Año: "2014",
@@ -36,13 +36,13 @@ const vehiculos = [
     modelo: "Sandero PH2 1.6L 16v - 2011",
     precio: 10500000,
     //video: "https://www.youtube.com/embed/6IadFohomac",
-    imagenPrincipal: "assets/autos/sandero11.jpeg",
+    imagenPrincipal: "assets/autos/sandero11.jpg",
     // (Sin video, este funciona como antes)
     imagenes: [
-      "assets/autos/sandero22.jpeg",
-      "assets/autos/sandero33.jpeg",
-      "assets/autos/sandero44.jpeg",
-      "assets/autos/sandero55.jpeg",
+      "assets/autos/sandero22.jpg",
+      "assets/autos/sandero33.jpg",
+      "assets/autos/sandero44.jpg",
+      "assets/autos/sandero55.jpg",
          ],
     specs: {
       Año: "2011",
@@ -63,12 +63,12 @@ const vehiculos = [
     modelo: "Ecosport Titanium 1.6 - 2014",
     precio: 16500000,
     //video: "https://www.youtube.com/embed/QXa1GI_9J9Q",
-    imagenPrincipal: "assets/autos/eco1.jpeg",
+    imagenPrincipal: "assets/autos/eco1.jpg",
     imagenes: [
-      "assets/autos/eco2.jpeg",
-      "assets/autos/eco3.jpeg",
-      "assets/autos/eco4.jpeg",
-      "assets/autos/eco5.jpeg",
+      "assets/autos/eco2.jpg",
+      "assets/autos/eco3.jpg",
+      "assets/autos/eco4.jpg",
+      "assets/autos/eco5.jpg",
     ],
     specs: {
       Año: "2014",
@@ -115,6 +115,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

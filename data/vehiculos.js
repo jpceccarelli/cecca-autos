@@ -10,6 +10,7 @@ const vehiculos = [
     //video: "http://www.youtube.com/embed/pqKNugNnIoc",
     imagenPrincipal: "assets/autos/focus1.jpg",
     imagenes: [
+      "assets/autos/focus1.jpg",
       "assets/autos/focus2.jpg",
       "assets/autos/focus3.jpg",
       "assets/autos/focus4.jpg",
@@ -38,6 +39,7 @@ const vehiculos = [
     imagenPrincipal: "assets/autos/sandero11.jpg",
     // (Sin video, este funciona como antes)
     imagenes: [
+      "assets/autos/sandero11.jpg",
       "assets/autos/sandero22.jpg",
       "assets/autos/sandero33.jpg",
       "assets/autos/sandero44.jpg",
@@ -64,6 +66,7 @@ const vehiculos = [
     //video: "https://www.youtube.com/embed/QXa1GI_9J9Q",
     imagenPrincipal: "assets/autos/eco1.jpg",
     imagenes: [
+      "assets/autos/eco1.jpg",
       "assets/autos/eco2.jpg",
       "assets/autos/eco3.jpg",
       "assets/autos/eco4.jpg",
@@ -114,6 +117,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

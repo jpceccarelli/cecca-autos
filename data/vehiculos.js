@@ -14,8 +14,7 @@ const vehiculos = [
       "assets/autos/focus3.jpg",
       "assets/autos/focus4.jpg",
       "assets/autos/focus5.jpg",
-      "assets/autos/focus6.jpg",
-      "assets/autos/focus7.jpg",   
+      "assets/autos/focus6.jpg",   
     ],
     specs: {
       Año: "2014",
@@ -43,7 +42,7 @@ const vehiculos = [
       "assets/autos/sandero33.jpg",
       "assets/autos/sandero44.jpg",
       "assets/autos/sandero55.jpg",
-         ],
+      "assets/autos/sandero66.jpg",         ],
     specs: {
       Año: "2011",
       Motor: "1.6 L",
@@ -115,6 +114,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

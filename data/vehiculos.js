@@ -113,10 +113,41 @@ const vehiculos = [
     vin: "VINFIORINO0004",
     whatsapp: "5492616256518",
   },
+
+  
+  {
+    id: "5",
+    tipo: "auto",
+    marca: "Fiat",
+    modelo: "Palio S 1.6 - 2000",
+    precio: 5200000,
+    //video: "https://www.youtube.com/embed/tBWXijUlBMI",
+    imagenPrincipal: "assets/autos/IMG_5288.jpeg",
+    imagenes: [
+      "assets/autos/IMG_5288.jpeg",
+      "assets/autos/IMG_5284.jpeg",
+      "assets/autos/IMG_5285.jpeg",
+      "assets/autos/IMG_5286.jpeg",
+      "assets/autos/IMG_5287.jpeg",
+      "assets/autos/IMG_5289.jpeg",
+    ],
+    specs: {
+      Año: "2000",
+      Motor: "1.6 8V",
+      Transmisión: "Manual",
+      Color: "Azul",
+      Combustible: "Nafta-GNC",
+      Permuta: "Si",
+    },
+    vin: "VINPALIO0005",
+    whatsapp: "5492616256518",
+  },
 ];
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
+
 
 
 

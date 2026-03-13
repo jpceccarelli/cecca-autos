@@ -89,7 +89,8 @@ const vehiculos = [
   {
     id: "4",
     tipo: "auto",
-    marca: "Fiesta Max MP3 - 2009",
+    marca: "Ford",
+    modelo: "Fiesta Max MP3 - 2009",
     precio: 8000000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/autos/fiesta1.jpeg",
@@ -144,6 +145,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

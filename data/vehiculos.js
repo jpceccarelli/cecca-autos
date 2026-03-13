@@ -5,7 +5,7 @@ const vehiculos = [
     tipo: "auto",
     marca: "Ford",
     modelo: "Focus III 1.6L MT - 2014",
-    precio: 15000000,
+    precio: 14500000,
     // (EJEMPLO AÑADIDO) - Reemplaza "VIDEO_ID_AQUI" con el ID de tu video de YouTube
     //video: "http://www.youtube.com/embed/pqKNugNnIoc",
     imagenPrincipal: "assets/autos/focus1.jpg",
@@ -90,7 +90,7 @@ const vehiculos = [
     id: "4",
     tipo: "auto",
     marca: "Fiesta Max MP3 - 2009",
-    precio: 9800000,
+    precio: 8000000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/autos/fiesta1.jpeg",
     imagenes: [
@@ -118,7 +118,7 @@ const vehiculos = [
     tipo: "auto",
     marca: "Fiat",
     modelo: "Palio S 1.6 - 2000",
-    precio: 5200000,
+    precio: 3500000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/autos/IMG_5288.jpeg",
     imagenes: [
@@ -144,6 +144,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

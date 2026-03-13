@@ -108,7 +108,7 @@ const vehiculos = [
       Combustible: "Nafta",
       Permuta: "Si",
     },
-    vin: "VINFIORINO0004",
+    vin: "VINFIESTAO0004",
     whatsapp: "5492616256518",
   },
 
@@ -144,6 +144,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

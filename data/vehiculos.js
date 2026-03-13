@@ -88,26 +88,24 @@ const vehiculos = [
   
   {
     id: "4",
-    tipo: "furgón",
-    marca: "Fiat",
-    modelo: "Fiorino Fire - 2009",
+    tipo: "auto",
+    marca: "Fiesta Max MP3 - 2009",
     precio: 9800000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
-    imagenPrincipal: "assets/autos/IMG_3900.jpeg",
+    imagenPrincipal: "assets/autos/fiesta1.jpeg",
     imagenes: [
-      "assets/autos/IMG_3900.jpeg",
-      "assets/autos/IMG_3903.jpeg",
-      "assets/autos/IMG_3907.jpeg",
-      "assets/autos/fiorino2.jpeg",
-      "assets/autos/fiorino3.jpeg",
+      "assets/autos/fiesta1.jpeg",
+      "assets/autos/fiesta2.jpeg",
+      "assets/autos/fiesta3.jpeg",
+      "assets/autos/fiesta5.jpeg",
+      "assets/autos/fiesta4.jpeg",
     ],
     specs: {
       Año: "2009",
-      Motor: "1.4 8V",
+      Motor: "1.6",
       Transmisión: "Manual",
-      Color: "Gris",
-      kms: "175.000",
-      Combustible: "Nafta-GNC",
+      Color: "Rojo",
+      Combustible: "Nafta",
       Permuta: "Si",
     },
     vin: "VINFIORINO0004",
@@ -146,6 +144,7 @@ const vehiculos = [
 
 
 //PARA VOLVER A HACER ANDAR EL VIDEO, HABILITAR EL ATRIBUTO VIDEO EN CADA OBJETO
+
 
 
 

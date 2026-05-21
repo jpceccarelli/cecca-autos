@@ -8,7 +8,7 @@ const vehiculos = [
     precio: 9800000,
     // (EJEMPLO AÑADIDO) - Reemplaza "VIDEO_ID_AQUI" con el ID de tu video de YouTube
     //video: "http://www.youtube.com/embed/pqKNugNnIoc",
-    imagenPrincipal: "assets/autos/ka1.heic",
+    imagenPrincipal: "assets/autos/ka1.HEIC",
     imagenes: [
       "assets/autos/focus1.jpg",
       "assets/autos/focus2.jpg",

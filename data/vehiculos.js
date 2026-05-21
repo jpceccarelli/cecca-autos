@@ -10,8 +10,8 @@ const vehiculos = [
     //video: "http://www.youtube.com/embed/pqKNugNnIoc",
     imagenPrincipal: "assets/autos/ka1.jpg",
     imagenes: [
-      "assets/autos/focus1.jpg",
-      "assets/autos/focus2.jpg",
+      "assets/autos/ka1.jpg",
+      "assets/autos/ka2.heic",
       "assets/autos/focus3.jpg",
       "assets/autos/focus4.jpg",
       "assets/autos/focus5.jpg",

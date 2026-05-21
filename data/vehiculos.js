@@ -8,14 +8,14 @@ const vehiculos = [
     precio: 9800000,
     // (EJEMPLO AÑADIDO) - Reemplaza "VIDEO_ID_AQUI" con el ID de tu video de YouTube
     //video: "http://www.youtube.com/embed/pqKNugNnIoc",
-    imagenPrincipal: "assets/autos/ka11.jpg",
+    imagenPrincipal: "assets/autos/ka1.jpg",
     imagenes: [
-      "assets/autos/ka11.jpg",
-      "assets/autos/ka2.heic",
-      "assets/autos/focus3.jpg",
-      "assets/autos/focus4.jpg",
-      "assets/autos/focus5.jpg",
-      "assets/autos/focus6.jpg",   
+      "assets/autos/ka1.jpg",
+      "assets/autos/ka2.jpg",
+      "assets/autos/ka3.jpg",
+      "assets/autos/ka4.jpg",
+      "assets/autos/ka5.jpg",
+      "assets/autos/ka6.jpg",   
     ],
     specs: {
       Año: "2013",
@@ -26,7 +26,7 @@ const vehiculos = [
       Combustible: "Nafta",
       Permuta: "Si",
     },
-    vin: "VINFOCUS0001",
+    vin: "VINKAFLY0001",
     whatsapp: "5492616256518",
   },
   {

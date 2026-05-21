@@ -14,7 +14,6 @@ const vehiculos = [
       "assets/autos/ka2.jpg",
       "assets/autos/ka3.jpg",
       "assets/autos/ka4.jpg",
-      "assets/autos/ka5.jpg",
       "assets/autos/ka6.jpg",   
     ],
     specs: {

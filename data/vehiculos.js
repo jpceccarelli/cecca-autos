@@ -64,13 +64,15 @@ const vehiculos = [
     modelo: "Corsa Classic 1.6 FULL- 2009",
     precio: 7800000,
     //video: "https://www.youtube.com/embed/QXa1GI_9J9Q",
-    imagenPrincipal: "assets/autos/eco1.jpg",
+    imagenPrincipal: "assets/autos/corsa1.jpg",
     imagenes: [
-      "assets/autos/eco1.jpg",
-      "assets/autos/eco2.jpg",
-      "assets/autos/eco3.jpg",
-      "assets/autos/eco4.jpg",
-      "assets/autos/eco5.jpg",
+      "assets/autos/corsa1.jpg",
+      "assets/autos/corsa2.jpg",
+      "assets/autos/corsa3.jpg",
+      "assets/autos/corsa4.jpg",
+      "assets/autos/corsa5.jpg",
+      "assets/autos/corsa6.jpg",
+      
     ],
     specs: {
       Año: "2009",

@@ -98,7 +98,7 @@ const vehiculos = [
       "assets/autos/ca1.jpg",
       "assets/autos/ca2.jpg",
       "assets/autos/ca3.jpg",
-      "assets/autos/ca4.jpg",
+      "assets/autos/ca4.JPG",
     ],
     specs: {
       Año: "2008",

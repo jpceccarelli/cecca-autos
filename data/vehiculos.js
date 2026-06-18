@@ -28,36 +28,9 @@ const vehiculos = [
     vin: "VINKAFLY0001",
     whatsapp: "5492616256518",
   },
+  
   {
     id: "2",
-    tipo: "auto",
-    marca: "Renault",
-    modelo: "Sandero PH2 1.6L 16v - 2011",
-    precio: 10500000,
-    //video: "https://www.youtube.com/embed/6IadFohomac",
-    imagenPrincipal: "assets/autos/sandero11.jpg",
-    // (Sin video, este funciona como antes)
-    imagenes: [
-      "assets/autos/sandero11.jpg",
-      "assets/autos/sandero22.jpg",
-      "assets/autos/sandero33.jpg",
-      "assets/autos/sandero44.jpg",
-      "assets/autos/sandero55.jpg",
-      "assets/autos/sandero66.jpg",         ],
-    specs: {
-      Año: "2011",
-      Motor: "1.6 L",
-      Transmisión: "Manual",
-      Color: "Gris",
-      Kms: "170.000",
-      Combustible: "Nafta",
-      Permuta: "Si",
-    },
-    vin: "VINSANDERO0002",
-    whatsapp: "5492616256518",
-  },
-  {
-    id: "3",
     tipo: "auto",
     marca: "Chevrolet",
     modelo: "Corsa Classic 1.6 FULL- 2009",
@@ -88,7 +61,7 @@ const vehiculos = [
  
   
   {
-    id: "4",
+    id: "3",
     tipo: "auto",
     marca: "Ford",
     modelo: "KA Viral - 2008",
@@ -115,32 +88,7 @@ const vehiculos = [
   },
 
   
-  {
-    id: "5",
-    tipo: "auto",
-    marca: "Volkswagen",
-    modelo: "Suran Limited 1.6 - 2014",
-    precio: 12000000,
-    //video: "https://www.youtube.com/embed/tBWXijUlBMI",
-    imagenPrincipal: "assets/autos/suran1.JPG",
-    imagenes: [
-      "assets/autos/suran1.JPG",
-      "assets/autos/suran2.JPG",
-      "assets/autos/suran3.JPG",
-      "assets/autos/suran4.JPG",
-    ],
-    specs: {
-      Año: "2014",
-      Motor: "1.6",
-      Transmisión: "Manual",
-      Color: "Blanco",
-      Kms: "152.000",
-      Combustible: "Nafta",
-      Permuta: "Si",
-    },
-    vin: "VINSURAN0005",
-    whatsapp: "5492616256518",
-  },
+  
 ];
 
 

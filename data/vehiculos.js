@@ -92,7 +92,7 @@ const vehiculos = [
     tipo: "auto",
     marca: "Chevrolet",
     modelo: "Corsa II - 2008",
-    precio: 8000000,
+    precio: 8500000,
     //video: "https://www.youtube.com/embed/tBWXijUlBMI",
     imagenPrincipal: "assets/autos/corsa21.jpg",
     imagenes: [

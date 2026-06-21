@@ -55,7 +55,7 @@ const vehiculos = [
       Combustible: "Nafta",
       Permuta: "Si",
     },
-    vin: "VINECORSA0003",
+    vin: "VINECORSA0002",
     whatsapp: "5492616256518",
   },
  
@@ -83,10 +83,37 @@ const vehiculos = [
       Kms: "145.000",
       Permuta: "Si",
     },
-    vin: "VINKA0004",
+    vin: "VINKA0003",
     whatsapp: "5492616256518",
   },
 
+  {
+    id: "4",
+    tipo: "auto",
+    marca: "Chevrolet",
+    modelo: "Corsa II - 2008",
+    precio: 8000000,
+    //video: "https://www.youtube.com/embed/tBWXijUlBMI",
+    imagenPrincipal: "assets/autos/corsa21.jpg",
+    imagenes: [
+      "assets/autos/corsa21.jpg",
+      "assets/autos/corsa22.jpg",
+      "assets/autos/corsa23.jpg",
+      "assets/autos/corsa24.jpg",
+      "assets/autos/corsa25.jpg",
+    ],
+    specs: {
+      Año: "2010",
+      Motor: "1.8",
+      Transmisión: "Manual",
+      Color: "Negro",
+      Combustible: "Nafta",
+      Kms: "145.000",
+      Permuta: "Si",
+    },
+    vin: "VINCORSA0004",
+    whatsapp: "5492616256518",
+  },
   
   
 ];
